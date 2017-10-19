@@ -147,7 +147,7 @@ module Guard
 
       def status_to_message(status)
         len = step_mother.steps(status).length
-        dump_count(len, "step", status.to_s)
+        Cucumber::Formatter::ConsoleCounts(len, "step", status.to_s).to_s
       end
     end
   end
