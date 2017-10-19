@@ -14,8 +14,8 @@ end
 require "cucumber"
 require "guard/compat/plugin"
 
-require "cucumber/formatter"
 require "cucumber/formatter/console"
+require "cucumber/formatter/console_counts"
 require "cucumber/formatter/io"
 
 module Guard
