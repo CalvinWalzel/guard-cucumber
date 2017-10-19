@@ -15,7 +15,6 @@ require "cucumber"
 require "guard/compat/plugin"
 
 require "cucumber/formatter/console"
-require "cucumber/formatter/console_counts"
 require "cucumber/formatter/io"
 
 module Guard
@@ -148,7 +147,11 @@ module Guard
 
       def status_to_message(status)
         len = step_mother.steps(status).length
-        Cucumber::Formatter::ConsoleCounts(len, "step", status.to_s).to_s
+        dump_count(len, "step", status.to_s).to_s
+      end
+      
+      def dump_count(count, what, state=nil)
+        [count, state, "#{what}#{count == 1 ? '' : 's'}"].compact.join(" ")
       end
     end
   end
