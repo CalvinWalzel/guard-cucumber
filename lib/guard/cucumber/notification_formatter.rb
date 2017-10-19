@@ -14,6 +14,7 @@ end
 require "cucumber"
 require "guard/compat/plugin"
 
+require "cucumber/formatter"
 require "cucumber/formatter/console"
 require "cucumber/formatter/io"
 
